@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+  /* primary colors */
+  --clr-primary-hsl-pale: 225, 100%, 94%;
+  --clr-primary-hsl-purple: 245, 83%, 68%, 1;
+  --clr-primary-hsl-bright: 245, 75%, 52%;
+
+  /* neutral colors  */
+  --clr-neutral-hsl-very-pale: 225, 100%, 98%;
+  --clr-neutral-hsl-desaturated: 223, 23%, 55%, 1;
+  --clr-neutral-hsl-dark: 223, 47%, 23%;
+
+  /* HSL Colors */
+
+  --clr-primary-200: hsl(var(--clr-primary-hsl-pale));
+  --clr-primary-300: hsl(var(--clr-primary-hsl-purple));
+  --clr-primary-400: hsl(var(--clr-primary-hsl-bright));
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(var(--clr-neutral-hsl-very-pale));
+  --clr-neutral-400: hsl(var(--clr-neutral-hsl-desaturated));
+  --clr-neutral-800: hsl(var(--clr-neutral-hsl-dark));
+
+  /* typography */
+  --ff: 'Red Hat Display';
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+  --fw-900: 900;
+
+  /* sizes  */
+
+  --fs-100: 0.125rem;
+  --fs-200: 1.25rem;
+  --fs-300: 1.75rem;
+  --fs-400: 2rem;
+  --fs-500: 3rem;
+  --fs-700: 5rem;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font: inherit;
+
+  font-family: var(--ff);
+  font-weight: var(--fw-400);
+  color: var(--clr-neutral-300);
+  background: var(--clr-neutral-200);
+
+  /*! for demo only  */
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: var(--fs-300);
+  font-weight: var(--fw-900);
+  color: var(--clr-neutral-800);
+}
+
+p {
+  font-weight: var(--fw-500);
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* -----------------  composition ------------------*/
+
+.grid-flow {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.flex-row {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+/* -----------------  utility ------------------*/
+
+.padding-24 {
+  padding: 1.5rem;
+}
+.padding-48 {
+  padding: 3rem;
+}
+
+.text-neutral-800 {
+  color: var(--clr-neutral-800);
+}
+
+.big-neutral-100 {
+  background-color: var(--clr-neutral-100);
+}
+
+.big-neutral-200 {
+  background-color: var(--clr-neutral-200);
+}
+
+.text-align-center {
+  text-align: center;
+}
+.text-align-left {
+  text-align: left;
+}
+
+.fw-bold {
+  font-weight: var(--fw-700);
+}
+
+.fw-xbold {
+  font-weight: var(--fw-900);
+}
+.br-1 {
+  border-radius: 0.5rem;
+}
+.br-2 {
+  border-radius: 1rem;
+}
+
+.push-right {
+  margin-left: auto;
+}
+
+a,
+.link {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  color: var(--clr-primary-400);
+  text-decoration: underline;
+  font-weight: var(--fw-700);
+}
+
+a:hover,
+a:focus,
+.link:hover,
+.link:focus {
+  color: var(--clr-primary-300);
+  text-decoration: none;
+}
+
+/* -----------------  block ------------------*/
+
+.card {
+  max-width: 450px;
+  overflow: hidden;
+}
+
+.button {
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  padding: 1em 2em;
+  border: none;
+  font-weight: var(--fw-700);
+}
+
+/* -----------------  exception ------------------*/
+.button[data-type='primary'] {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
+}
+
+.button[data-type='primary']:hover,
+.button[data-type='primary']:focus {
+  background-color: var(--clr-primary-300);
+}
+
+.button[data-type='naked'] {
+  color: var(--clr-neutral-400);
+  padding: 0;
+}
+
+.button[data-type='naked']:hover,
+.button[data-type='naked']:focus {
+  color: var(--clr-neutral-800);
+}
